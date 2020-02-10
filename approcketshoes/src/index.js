@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+
 import CodePush from 'react-native-code-push';
+
 import './config/ReactotronConfig';
 import { StatusBar } from 'react-native';
 import OneSignal from 'react-native-onesignal';
@@ -26,11 +28,11 @@ class App extends Component {
     OneSignal.addEventListener('ids', this.onIds);
   }
 
-  onReceived = data => {};
+  // onReceived = data => {};
 
-  onOpened = notification => {};
+  // onOpened = notification => {};
 
-  onIds = id => {};
+  // onIds = id => {};
 
   render() {
     return (
@@ -44,4 +46,6 @@ class App extends Component {
   }
 }
 
-export default App;
+export default CodePush({
+  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
+})(App);
