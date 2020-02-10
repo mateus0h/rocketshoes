@@ -1,4 +1,3 @@
 <resources>
     <string name="app_name">RocketShoes</string>
-    <string moduleConfig="true" name="CodePushDeploymentKey">UdJ6NYYepp1A5ivHK2zkslN3_MljqAYnrV3fS</string>
 </resources>

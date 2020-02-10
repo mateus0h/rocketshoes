@@ -164,13 +164,15 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
-            buildConfigField "String", "CODEPUSH_KEY", '""'
+            resValue "string", "CodePushDeploymentKey", '""'
         }
 
         releaseStaging {
-            buildConfigField "String", "CODEPUSH_KEY", '"UdJ6NYYepp1A5ivHK2zkslN3_MljqAYnrV3fS"'
+          resValue "string", "CodePushDeploymentKey", '"UdJ6NYYepp1A5ivHK2zkslN3_MljqAYnrV3fS"'
 
-            matchingFallbacks = ['debug', 'release']
+          // Note: It is a good idea to provide matchingFallbacks for the new buildType you create to prevent build issues
+          // Add the following line if not already there
+          matchingFallbacks = ['release']
         }
 
         release {
@@ -180,7 +182,7 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
 
-            buildConfigField "String", "CODEPUSH_KEY", '"UdJ6NYYepp1A5ivHK2zkslN3_MljqAYnrV3fS"'
+            resValue "string", "CodePushDeploymentKey", '"y2lb-ZXTQL1VY0v4h_YrLKz3qyzzT8tAlr8X5"'
 
         }
     }
