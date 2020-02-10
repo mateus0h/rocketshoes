@@ -46,6 +46,7 @@ class App extends Component {
   }
 }
 
-export default CodePush({
-  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
-})(App);
+// export default CodePush({
+//   checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
+// })(App);
+export default App;
